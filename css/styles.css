@@ -1,0 +1,437 @@
+body{
+    margin: 0;
+}
+
+
+/* Hamburger button styles. */
+.hamburger-button {
+    
+	position: absolute;
+	transition: .3s ease-in-out;
+	width: 35px;
+	height: 34px;
+	display: block;
+	top: 2rem;
+	right: 7rem;
+	z-index: 100000;
+}
+
+	.hamburger-button span {
+		position: absolute;
+		height: 4px;
+		border-radius: 20px;
+		width: 100%;
+		background-color: #fff;
+		top: 0;
+		transition: transform .2s ease-in-out, opacity .2s ease-in-out;
+	}
+
+		.hamburger-button span:nth-child(1) {
+			top: 0px;
+		}
+
+		.hamburger-button span:nth-child(2),
+		.hamburger-button span:nth-child(3) {
+			top: 13px;
+		}
+
+		.hamburger-button span:nth-child(4) {
+			top: 26px;
+		}
+
+	    .hamburger-button.active span {
+		background-color: #FFF;
+	}
+
+		.hamburger-button.active span:nth-child(1),
+		.hamburger-button.active span:nth-child(4) {
+			opacity: 0;
+		}
+
+		.hamburger-button.active span:nth-child(2) {
+			transform: rotate(45deg);
+		}
+
+		.hamburger-button.active span:nth-child(3) {
+			transform: rotate(-45deg);
+		}
+
+/* 1. Style the overlay & navigation. */
+.overlay {
+	position: fixed;
+	background: #3f9dd5;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 0%;
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity .3s, visibility .3s, height .3s;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+    z-index: 10000;
+}
+
+nav {
+	font-size: 2rem;
+	font-family: 'Gloria Hallelujah', cursive;
+	text-align: center;
+}
+
+	nav ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+
+		nav ul li {
+			opacity: 0;
+			margin: 1rem 0;
+		}
+
+			nav ul li a {
+				color: #FFF;
+				text-decoration: none;
+				transition: opacity .2s ease;
+				opacity: .75;
+			}
+
+				nav ul li a:hover {
+					opacity: 1;
+				}
+
+/* 2. Add the animation. */
+@keyframes fadeInLeft {
+	0% {
+		opacity: 0;
+		transform: translate3d(-25%, 0, 0);
+	}
+	100% {
+		opacity: 1;
+		transform: translate3d(0, 0, 0);
+	}
+}
+
+/* 3. Style the visible overlay. */
+.overlay.visible {
+	opacity: 1;
+	visibility: visible;
+	height: 100%;
+}
+
+	.overlay.visible li {
+		animation: fadeInLeft .3s ease forwards;
+	}
+
+		.overlay.visible li:nth-of-type(1) {
+			animation-delay: 0.23s;
+		}
+
+		.overlay.visible li:nth-of-type(2) {
+			animation-delay: 0.26s;
+		}
+
+		.overlay.visible li:nth-of-type(3) {
+			animation-delay: 0.29s;
+		}
+
+		.overlay.visible li:nth-of-type(4) {
+			animation-delay: 0.32s;
+		}
+
+		.overlay.visible li:nth-of-type(5) {
+			animation-delay: 0.35s;
+		}
+
+a{
+    cursor: pointer;
+}
+
+@media only screen and (min-width: 100px) {
+    
+.grid{
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+        "section1 section1"
+        "section2 section2"
+        "section3 section3"
+        "section4 section4"
+        "section5 section5"
+        "section6 section6"
+        "section7 section7"
+        "section8 section8"
+        "section9 section9"
+        "section10 section10"
+        "section11 section11"
+        "section12 section12"
+        "section13 section13"
+        "section14 section14"
+        "section15 section15"
+        "section16 section16";
+}
+
+.section1{
+    grid-area: section1;
+    height: 6em;
+    width: 100%;
+    background-color: #3f9dd5;
+    margin-bottom: 1px;
+}
+#logo{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5em;
+}
+#logoTop{
+    position: absolute;
+    color: white;
+    font-family: 'Gloria Hallelujah', cursive;
+    margin-top: 1.2em;
+    font-size: 12px;
+    margin-left: 2em;
+    display: none;
+}
+#contactInfo{
+    display: inline-flex;
+    padding-right: 20px;
+    color: white;
+    margin-top: 1.5em;
+    font-size: 12px;
+    font-family: 'Open Sans', sans-serif;
+    display: none;
+}
+.contactInfo{
+    display: block;
+    height: 3em;
+    width: 100%;
+    text-align: center;
+}
+#icons{
+    color: white;
+    padding: 10px;
+    display: none;
+}
+.section2{
+    grid-area: section2;
+    background-color: #3f9dd5;
+}
+#logo{
+    height: 15em;
+}
+.logo{
+    position: absolute;
+    width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 100;
+}
+.item img{
+    width: 100%;
+}
+.overlayFilter{
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 1600px;
+  opacity: 0.2;
+}
+.heading{
+    position: absolute;
+    width: 100%;
+    z-index: 100;
+}
+#learn{
+    font-family: 'Luckiest Guy', cursive;
+    color: white;
+    text-align: center;
+    font-size: 4em;
+    margin-top: 6em;
+}
+.owl-dots{
+    display: none;
+}
+.section3{
+    grid-area: section3;
+    height: 25em;
+    background-color: white;
+}
+.stock1{
+    width: 100%;
+    height: 100%; 
+}
+#stock1{
+    display: block;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 50vh;
+}
+.section4{
+    grid-area: section4;
+    height: 40em;
+    background-color: white;
+}
+#whiteHut{
+    color: grey;
+    font-family: 'Luckiest Guy', cursive;
+    margin: 1em;
+    text-align: center;
+}
+#whiteHutText{
+    font-family: 'Open Sans', sans-serif;
+    color: grey;
+    margin: 1em;
+    text-align: center;
+}
+.section5{
+    grid-area: section5;
+    height: 35em;
+    background-color: #3f9dd5;
+}
+.section6{
+    grid-area: section6;
+    height: 45em;
+    background-color: #3f9dd5;
+}
+#whiteHut2{
+    color: white;
+    font-family: 'Luckiest Guy', cursive;
+     margin: 1em;
+    text-align: center;
+}
+#whiteHutText2{
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+    margin: 1em;
+    text-align: center;
+}
+.section7{
+    grid-area: section7;
+    height: 45em;
+    background-color: black;
+    background-image: url(/assets/images/groupLessons.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center; 
+}
+.nested{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+        "section1Nested section1Nested"
+        "section2Nested section2Nested"
+        ;
+}
+.section1Nest{
+    grid-area: section1Nested;
+    background-color: #1d737c;
+}
+.section2Nest{
+    height: 45em;
+    grid-area: section2Nested;
+    background-color: #1d737c;
+    opacity: 0.8;
+}
+.nested2{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+        "section1Nested section1Nested"
+        "section2Nested section2Nested"
+        ;
+}
+.section3Nest{
+    grid-area: section1Nested;
+    background-color: #3f9dd5;
+    opacity: 0.8;
+}
+.section4Nest{
+    height: 45em;
+    grid-area: section2Nested;
+    background-color: #3f9dd5;
+    opacity: 0.8;
+}
+.nested3{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+        "section1Nested section1Nested"
+        "section2Nested section2Nested"
+        ;
+}
+.section5Nest{
+    grid-area: section1Nested;
+    background-color: #1d737c;
+}
+.section6Nest{
+    height: 45em;
+    grid-area: section2Nested;
+    background-color: #1d737c;
+    opacity: 0.8;
+}
+.section8{
+    grid-area: section8;
+    height: 45em;
+    background-color: grey;
+    background-image: url(/assets/images/group.JPG);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center; 
+}
+.section9{
+    grid-area: section9;
+    height: 45em;
+    background-color: lightgray;
+    background-image: url(/assets/images/birthdayParty.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center; 
+}
+.section10{
+    grid-area: section10;
+    height: 35em;
+    background-color: white;
+}
+.section11{
+    grid-area: section11;
+    height: 35em;
+    background-color: white;
+}
+.section12{
+    grid-area: section12;
+    height: 35em;
+    background-color: #1d737c;
+}
+.section13{
+    grid-area: section13;
+    height: 35em;
+    background-color: #1d737c;
+}
+.section14{
+    grid-area: section14;
+    height: 35em;
+    background-color: #3f9dd5;
+    background: linear-gradient(rgba(63, 157, 213, 0.9), rgba(63, 157, 213, 0.80)), url(../assets/images/contactUs.jpg);
+    background-position: center;
+}
+.section15{
+    grid-area: section15;
+    height: 35em;
+    background-color: lightgray;
+}
+.section16{
+    grid-area: section16;
+    height: 3em;
+    background-color: white;
+}
+}
