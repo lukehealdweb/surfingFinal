@@ -148,7 +148,7 @@ a{
     cursor: pointer;
 }
 
-@media only screen and (min-width: 750px) {
+@media only screen and (max-width: 720px) {
     
 .grid{
     overflow: hidden;
@@ -309,7 +309,7 @@ a{
 #whiteHutText2{
     font-family: 'Open Sans', sans-serif;
     color: white;
-    margin: 1em;
+    margin: 4em;
     text-align: center;
 }
 .section7{
